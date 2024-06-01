@@ -51,7 +51,6 @@ function setForm() {
     password: inputs[1].value,
   };
 
-  console.log(user);
   regeisterForm(user);
 }
 
@@ -72,9 +71,9 @@ async function regeisterForm(userData) {
     location.href = "./home.html";
   } else {
     document.getElementById("msg").innerHTML = response.message;
+    toastr.error(`${response.message}`);
   }
 
-  console.log(response);
 }
 
 inputs.forEach((input) => {
@@ -100,8 +99,6 @@ function validation(input) {
     return false;
   }
 }
-
-
 
 
 

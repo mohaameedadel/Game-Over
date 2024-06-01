@@ -2,7 +2,7 @@ let gameData = document.getElementById("gameData");
 var loader = document.querySelector(".loading");
 const mode = document.getElementById("mode");
 
-
+toastr.success("Login Done")
 
 if (localStorage.getItem("data-theme") == "dark") {
   document
@@ -81,7 +81,6 @@ async function getGames(dataAttribute) {
   );
 
   const response = await api.json();
-  console.log(response);
 
   displayData(response);
 

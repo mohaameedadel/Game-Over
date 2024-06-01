@@ -41,7 +41,6 @@ function theme() {
   }
 }
 
-console.log(id);
 
 (async function () {
   const options = {

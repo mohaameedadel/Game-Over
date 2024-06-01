@@ -40,10 +40,6 @@ function theme() {
   }
 }
 
-
-
-
-
 document.forms[0].addEventListener("submit", (e) => {
   e.preventDefault();
   if (
@@ -65,7 +61,6 @@ function setForm() {
     age: inputs[4].value,
   };
 
-  console.log(user);
   regeisterForm(user);
 }
 
@@ -84,12 +79,14 @@ async function regeisterForm(userData) {
   if (response.message === "success") {
     location.href = "./index.html";
   } else {
-    document.getElementById("msg").innerHTML = Error(response.errors?.email.message);
+    document.getElementById("msg").innerHTML = Error(
+      response.errors?.email.message
+    );
+    toastr.error(`${response.errors?.email.message}`);
   }
-  
-  console.log(response);
-}
 
+
+}
 
 inputs.forEach((input) => {
   input.addEventListener("input", function () {
